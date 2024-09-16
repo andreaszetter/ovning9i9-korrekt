@@ -1,10 +1,9 @@
+/*hemknappen*/
 header h1 a{
     text-decoration: none;
     color:black;
     padding-left: 5px;
 }
-
-
 /* navbar */
 nav div button{
     padding:16px;
@@ -12,7 +11,6 @@ nav div button{
     font-size: 16px;
     background-color: rgb(221, 221, 221);
 }
-
 article h2{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
@@ -24,6 +22,14 @@ header nav{
     flex-direction: row;
     background-color: rgb(211, 211, 211);
 }
+a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*flyttar main bredvid sidebaren*/
+main{
+    margin-left: 21%;
+    margin-right: 5%;  
+}
 .left-sidebar{
     width: 20%;
     background-color: rgb(192, 192, 192);
@@ -32,9 +38,6 @@ header nav{
     overflow: auto;
     
 }
-a{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 .left-sidebar a{
     display:block;
     color:black;
@@ -42,33 +45,13 @@ a{
     background-color: rgb(212, 210, 210);
     text-decoration: none;
 }
-.sidebar{
-    width:30px;
-    min-width: 50px;
-    background-color: blue;
-    margin-left: 95%;
-    height:100%;
-    position:fixed;
-    overflow: auto;
-    display:block;
 
-}
-.sidebar a{
-    color:black;
-    background-color: aliceblue;
-    display:block;
-    text-decoration: none;
-}
-main{
-    margin-left: 21%;
-    margin-right: 5%;
-    
-}
-
+/*dropdown knappen*/
 .article-dropdown{
     position:relative;
     display:inline-block;
 }
+
 .dropdown-content{
     display: none;
     position:absolute;
@@ -86,22 +69,12 @@ main{
     text-decoration: none;
     display: block;
 }
-nav div button:hover{background-color: darkgray;}
-nav div button a{text-decoration: none; color:black;}
-
-.dropdown-content a:hover {background-color: #ddd;}
-.article-dropdown:hover .dropdown-content {display:block;}
-.article-dropdown:hover .dropbtn {background-color: darkgray;}
-.left-sidebar a:hover{background-color: darkgray;}
-.sidebar a:hover{background-color: green;}
+/*galleriet*/
 .gallery img:hover { 
     transform: scale(1.02);
     border-color:darkgray ;
     filter: brightness(0.7);
 }
-
-
-
 
  .gallery {
     display: grid;
@@ -110,18 +83,42 @@ nav div button a{text-decoration: none; color:black;}
     font-family: Arial, sans-serif;
 }
 
+
+.gallery img {
+    width: 100%;
+    height: 100px;
+    object-fit: fit;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid gray;
+    transition: all 0.3s ease;
+}
+/*navbar hover*/
+nav div button:hover{background-color: darkgray;}
+nav div button a{text-decoration: none; color:black;}
+
+.dropdown-content a:hover {background-color: #ddd;}
+/*gör så att dropdown content visas när man hovrar*/
+.article-dropdown:hover .dropdown-content {display:block;}
+.article-dropdown:hover .dropbtn {background-color: darkgray;}
+.left-sidebar a:hover{background-color: darkgray;}
+
+
+/*media queries*/
+/*dator*/
 @media (min-width: 600px) {
     .gallery {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+/*tablet, går från 4 till 2 kolumner av bilder*/
 @media (max-width: 599px){
     .gallery{
         grid-template-columns: repeat(2,1fr);
     }
     
 }
-
+/*telefon, tar bort sidebar gör om till en kolumn*/
 @media (max-width: 480px) {
     .gallery {
         grid-template-columns: 1fr;
@@ -133,24 +130,3 @@ nav div button a{text-decoration: none; color:black;}
         margin:0;
     }
 }
-
-.gallery img {
-    width: 100%;
-    height: 100px;
-    object-fit: fit;
-    display: block;
-    border-radius: 8px;
-    border: 1px solid gray;
-    transition: all 0.3s ease;
-}
-/*
-footer{
-    display:block;
-}
-.footer-bar{
-    display: flex;
-    font-size: 20px;
-    background-color: rgb(228, 124, 124);
-    flex-direction: column;
-    position:relative;
-}*/
