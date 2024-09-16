@@ -10,7 +10,9 @@ nav div button{
     padding:16px;
     border:none;
     font-size: 16px;
+    background-color: rgb(221, 221, 221);
 }
+
 article h2{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
@@ -20,11 +22,11 @@ article p{
 header nav{
     display:flex;
     flex-direction: row;
-    background-color: aliceblue;
+    background-color: rgb(211, 211, 211);
 }
 .left-sidebar{
     width: 20%;
-    background-color: antiquewhite;
+    background-color: rgb(192, 192, 192);
     position:fixed;
     height:100%;
     overflow: auto;
@@ -37,7 +39,7 @@ a{
     display:block;
     color:black;
     padding: 20px;
-    background-color: aliceblue;
+    background-color: rgb(212, 210, 210);
     text-decoration: none;
 }
 .sidebar{
@@ -76,6 +78,7 @@ main{
     background-color: antiquewhite;
     color:aliceblue;
     z-index: 1;
+    
 }
 .dropdown-content a{
     color:black;
@@ -83,27 +86,23 @@ main{
     text-decoration: none;
     display: block;
 }
-nav div button:hover{background-color: aqua;}
+nav div button:hover{background-color: darkgray;}
 nav div button a{text-decoration: none; color:black;}
+
 .dropdown-content a:hover {background-color: #ddd;}
 .article-dropdown:hover .dropdown-content {display:block;}
-.article-dropdown:hover .dropbtn {background-color: aqua;}
-.left-sidebar a:hover{background-color: blue;}
+.article-dropdown:hover .dropbtn {background-color: darkgray;}
+.left-sidebar a:hover{background-color: darkgray;}
 .sidebar a:hover{background-color: green;}
-
-
-
-
-footer{
-    display:block;
+.gallery img:hover { 
+    transform: scale(1.02);
+    border-color:darkgray ;
+    filter: brightness(0.7);
 }
-.footer-bar{
-    display: flex;
-    font-size: 20px;
-    background-color: rgb(228, 124, 124);
-    flex-direction: column;
-    position:relative;
-}
+
+
+
+
  .gallery {
     display: grid;
     gap: 10px;
@@ -120,14 +119,20 @@ footer{
     .gallery{
         grid-template-columns: repeat(2,1fr);
     }
+    
 }
 
 @media (max-width: 480px) {
     .gallery {
         grid-template-columns: 1fr;
     }
+    .left-sidebar{
+        display: none;
+    }
+    main{
+        margin:0;
+    }
 }
-
 
 .gallery img {
     width: 100%;
@@ -135,15 +140,17 @@ footer{
     object-fit: fit;
     display: block;
     border-radius: 8px;
-    border: 3px solid #ccc;
+    border: 1px solid gray;
     transition: all 0.3s ease;
 }
-
-
-
-
-
-.gallery img:hover {
-    transform: scale(1.02);
-    border-color: #555 ; 
+/*
+footer{
+    display:block;
 }
+.footer-bar{
+    display: flex;
+    font-size: 20px;
+    background-color: rgb(228, 124, 124);
+    flex-direction: column;
+    position:relative;
+}*/
